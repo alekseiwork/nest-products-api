@@ -118,4 +118,8 @@ export class ProductsService {
 
     return result.map((item) => item.brand);
   }
+
+  async clearTable(): Promise<void> {
+    await this.productsRepo.clear();
+  }
 }
