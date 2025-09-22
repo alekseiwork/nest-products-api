@@ -120,6 +120,8 @@ export class ProductsService {
   }
 
   async clearTable(): Promise<void> {
-    await this.productsRepo.clear();
+    await this.productsRepo.query(
+      'TRUNCATE TABLE "product" RESTART IDENTITY CASCADE;',
+    );
   }
 }
