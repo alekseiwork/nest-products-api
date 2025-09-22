@@ -7,7 +7,7 @@ async function bootstrap() {
 
   // Включаем CORS для фронтенда
   app.enableCors({
-    origin: ['http://localhost:3000', 'http://localhost:3001'],
+    origin: ['https://nuxt-products-frontend.vercel.app'],
     credentials: true,
   });
 
