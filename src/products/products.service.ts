@@ -121,7 +121,7 @@ export class ProductsService {
 
   async clearTable(): Promise<void> {
     await this.productsRepo.query(
-      'TRUNCATE TABLE "product" RESTART IDENTITY CASCADE;',
+      `TRUNCATE TABLE "${this.productsRepo.metadata.tableName}" RESTART IDENTITY CASCADE;`,
     );
   }
 }

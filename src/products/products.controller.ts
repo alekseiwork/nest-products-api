@@ -41,6 +41,12 @@ export class ProductsController {
     );
   }
 
+  @Delete('clear')
+  async clearTable() {
+    await this.productsService.clearTable();
+    return { message: 'Products table cleared' };
+  }
+
   @Get(':id')
   async getOne(@Param('id', ParseIntPipe) id: number): Promise<ProductEntity> {
     const product = await this.productsService.findOne(id);
